@@ -1,0 +1,10 @@
+{
+  "title": "rehype-image-salt",
+  "url": "https://hankei6km.github.io/rehype-image-salt-doc/",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "hankei6km/rehype-image-salt",
+  "twitter": "hankei6km"
+}
