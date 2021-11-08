@@ -29,13 +29,17 @@ export default theme({
       baseURL: "https://images.microcms-assets.io/",
     },
   },
-  pwa: {
-    // これを設定しておかないと "static/icon.png" を置き換えても
-    // デフォルトのアイコン画像が使われる
-    icon: {
-      source: "static/icon.png",
-    },
-  },
+  // CodesandoBox で試したところ、Fork すると置き換わった.
+  // 何かのキャッシュが残っているのか?
+  // ローカルではコンテナ再起動しても変化しなかったのだが、
+  // 現状では再現しないのでコメントアウト.
+  // pwa: {
+  //   // これを設定しておかないと "static/icon.png" を置き換えても
+  //   // デフォルトのアイコン画像が使われる
+  //   icon: {
+  //     source: "static/icon.png",
+  //   },
+  // },
   content: {
     markdown: {
       rehypePlugins: [
