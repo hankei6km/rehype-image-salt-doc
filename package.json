@@ -5,6 +5,8 @@
   "scripts": {
     "setup": "bash scripts/setup.sh",
     "predev": "bash scripts/setup.sh",
+    "prebuild": "bash scripts/setup.sh",
+    "pregenerate": "bash scripts/setup.sh",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
