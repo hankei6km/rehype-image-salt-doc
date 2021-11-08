@@ -52,7 +52,7 @@ jobs:
         RCC_MAP_CONFIG: ${{ secrets.RCC_MAP_CONFIG }}
 
     - name: Run generate
-      run: npm generate
+      run: npm run generate
       env:
         BASE_PATH: ${{ secrets.BASE_PATH }}
         BASE_URL: ${{ secrets.BASE_URL }}
