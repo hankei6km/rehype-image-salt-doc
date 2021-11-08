@@ -45,10 +45,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_PATH: ${{ secrets.BASE_PATH }}
         BASE_URL: ${{ secrets.BASE_URL }}
-        SHEET2CONTENT_API_BASE_URL: ${{ secrets.SHEET2CONTENT_API_BASE_URL }}
-        SHEET2CONTENT_APP_ID: ${{ secrets.SHEET2CONTENT_APP_ID }}
-        SHEET2CONTENT_ACCESS_KEY: ${{ secrets.SHEET2CONTENT_ACCESS_KEY }}
-        SHEET2CONTENT_STATIC_ROOT: ${{ secrets.SHEET2CONTENT_STATIC_ROOT }}
+        RCC_CLIENT_KIND: ${{ secrets.RCC_CLIENT_KIND }}
+        RCC_API_BASE_URL: ${{ secrets.RCC_API_BASE_URL }}
+        RCC_CREDENTIAL__0: ${{ secrets.RCC_CREDENTIAL__0 }}
+        RCC_CREDENTIAL__1: ${{ secrets.RCC_CREDENTIAL__1 }}
+        RCC_MAP_CONFIG: ${{ secrets.RCC_MAP_CONFIG }}
 
     - name: Run generate
       run: npm generate
