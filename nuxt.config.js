@@ -61,7 +61,18 @@ export default theme({
     host: process.env.NODE_ENV !== "production" ? "0" : "localhost", // デフォルト: localhost
   },
   router: {
-    base: process.env.BASE_PATH || "",
+    base: process.env.BASE_PATH || "/",
+  },
+  // https://github.com/nuxt/content/issues/376
+  hooks: {
+    "vue-renderer:ssr:templateParams": function (params) {
+      if (process.env.BASE_PATH) {
+        params.HEAD = params.HEAD.replace(
+          `<base href="${process.env.BASE_PATH}">`,
+          ""
+        );
+      }
+    },
   },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || "http://localhost:3000",
