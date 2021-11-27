@@ -31,16 +31,14 @@
       }
     },
     {
-      "srcName": "category",
+      "srcName": "category.label[\"ja\" in lang].label",
       "dstName": "category",
-      "fldType": "string",
-      "transform": "label[\"ja\" in lang].label"
+      "fldType": "string"
     },
     {
-      "srcName": "list",
+      "srcName":"$count(list)>0 ? list{title:items[fieldId=\"item\"].item} : {}",
       "dstName": "list",
-      "fldType": "object",
-      "transform": "$count($$)>0 ? $${title:items[fieldId=\"item\"].item} : {}"
+      "fldType": "object"
     }
   ]
 }
