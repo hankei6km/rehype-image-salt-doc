@@ -1,0 +1,29 @@
+passthruUnmapped: true
+
+media:
+  image:
+    library:
+      - src: https://images.microcms-assets.io/assets/
+        kind: imgix
+
+flds:
+  - srcName: mainVisual
+    dstName: mainVisual
+    fldType: image
+
+  - srcName: content
+    dstName: content
+    fldType: html
+    convert: markdown
+    toMarkdownOpts:
+      embedImgAttrs:
+        - baseURL: https://images.microcms-assets.io/assets/
+          embedTo: alt
+
+  - srcName: category.label["ja" in lang].label
+    dstName: category
+    fldType: string
+
+  - srcName: '$count(list)>0 ? list{title:items[fieldId="item"].item} : {}'
+    dstName: list
+    fldType: object

@@ -26,7 +26,7 @@ SAVE_LANGS=("ja" "en")
 for SAVE_LANG in "${SAVE_LANGS[@]}"; do
   DOCS_API_NAME="docs_${SAVE_LANG}"
   echo "${DOCS_API_NAME}"
-  MAP_CONFIG="${SCRIPTS_DIR}/mapconfig_${SAVE_LANG}.json"
+  MAP_CONFIG="${SCRIPTS_DIR}/mapconfig_${SAVE_LANG}.yaml"
   DOCS_CONTENTS_DIR="${CONTENT_DIR}/${SAVE_LANG}"
   DOCS_IMAGES_DIR="${STATIC_IMAGES_DIR}/${SAVE_LANG}"
 
