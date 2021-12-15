@@ -1,4 +1,4 @@
-passthruUnmapped: true
+passthruUnmapped: false
 
 media:
   image:
@@ -7,18 +7,52 @@ media:
         kind: imgix
 
 flds:
-  - srcName: mainVisual
-    dstName: mainVisual
-    fldType: image
+  - srcName: title
+    dstName: title
+    fldType: string
 
   - srcName: content
     dstName: content
     fldType: html
     convert: markdown
     toMarkdownOpts:
-      embedImgAttrs:
-        - baseURL: https://images.microcms-assets.io/assets/
-          embedTo: alt
+      imageSalt:
+        - command: embed
+          baseURL: https://images.microcms-assets.io/assets/
+          embed:
+            embedTo: alt
+
+  - srcName: description
+    dstName: description
+    fldType: string
+
+  - srcName: category.label["ja" in lang].label
+    dstName: category
+    fldType: string
+
+  - srcName: fullscreen
+    dstName: fullscreen
+    fldType: boolean
+
+  - srcName: version
+    dstName: version
+    fldType: string
+
+  - srcName: menuTitle
+    dstName: menuTitle
+    fldType: string
+
+  - srcName: subtitle
+    dstName: subtitle
+    fldType: string
+
+  - srcName: badge
+    dstName: badge
+    fldType: string
+
+  - srcName: list
+    dstName: list
+    fldType: object
 
   - srcName: category.label["ja" in lang].label
     dstName: category
