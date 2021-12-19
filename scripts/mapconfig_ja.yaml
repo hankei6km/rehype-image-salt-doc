@@ -1,4 +1,5 @@
 passthruUnmapped: false
+selectFldsToFetch: true
 
 media:
   image:
@@ -7,11 +8,13 @@ media:
         kind: imgix
 
 flds:
-  - query: title
+  - fetchFld: title
+    query: title
     dstName: title
     fldType: string
 
-  - query: content
+  - fetchFld: content
+    query: content
     dstName: content
     fldType: html
     convert: markdown
@@ -22,42 +25,42 @@ flds:
           embed:
             embedTo: alt
 
-  - query: description
+  - fetchFld: description
+    query: description
     dstName: description
     fldType: string
 
-  - query: category.label["ja" in lang].label
+  - fetchFld: category.label
+    query: category.label["ja" in lang].label
     dstName: category
     fldType: string
 
-  - query: fullscreen
+  - fetchFld: fullscreen
+    query: fullscreen
     dstName: fullscreen
     fldType: boolean
 
-  - query: version
+  - fetchFld: version
+    query: version
     dstName: version
     fldType: string
 
-  - query: menuTitle
+  - fetchFld: menuTitle
+    query: menuTitle
     dstName: menuTitle
     fldType: string
 
-  - query: subtitle
+  - fetchFld: subtitle
+    query: subtitle
     dstName: subtitle
     fldType: string
 
-  - query: badge
+  - fetchFld: badge
+    query: badge
     dstName: badge
     fldType: string
 
-  - query: list
-    dstName: list
-    fldType: object
-
-  - query: category.label["ja" in lang].label
-    dstName: category
-    fldType: string
-
-  - query: '$count(list)>0 ? list{title:items[fieldId="item"].item} : {}'
+  - fetchFld: list
+    query: '$count(list)>0 ? list{title:items[fieldId="item"].item} : {}'
     dstName: list
     fldType: object
