@@ -1,4 +1,5 @@
-passthruUnmapped: true
+passthruUnmapped: false
+selectFldsToFetch: true
 
 media:
   image:
@@ -7,11 +8,13 @@ media:
         kind: imgix
 
 flds:
-  - srcName: title
+  - fetchFld: title
+    query: title
     dstName: title
     fldType: string
 
-  - srcName: content
+  - fetchFld: content
+    query: content
     dstName: content
     fldType: html
     convert: markdown
@@ -22,42 +25,42 @@ flds:
           embed:
             embedTo: alt
 
-  - srcName: description
+  - fetchFld: description
+    query: description
     dstName: description
     fldType: string
 
-  - srcName: '$count(list)>0 ? list{title:items[fieldId="item"].item} : {}'
+  - fetchFld: category.label
+    query: category.label["en" in lang].label
     dstName: category
     fldType: string
 
-  - srcName: fullscreen
+  - fetchFld: fullscreen
+    query: fullscreen
     dstName: fullscreen
     fldType: boolean
 
-  - srcName: version
+  - fetchFld: version
+    query: version
     dstName: version
     fldType: string
 
-  - srcName: menuTitle
+  - fetchFld: menuTitle
+    query: menuTitle
     dstName: menuTitle
     fldType: string
 
-  - srcName: subtitle
+  - fetchFld: subtitle
+    query: subtitle
     dstName: subtitle
     fldType: string
 
-  - srcName: badge
+  - fetchFld: badge
+    query: badge
     dstName: badge
     fldType: string
 
-  - srcName: list
-    dstName: list
-    fldType: object
-
-  - srcName: category.label["ja" in lang].label
-    dstName: category
-    fldType: string
-
-  - srcName: '$count(list)>0 ? list{title:items[fieldId="item"].item} : {}'
+  - fetchFld: list
+    query: '$count(list)>0 ? list{title:items[fieldId="item"].item} : {}'
     dstName: list
     fldType: object
