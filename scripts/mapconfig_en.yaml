@@ -1,4 +1,4 @@
-passthruUnmapped: true
+passthruUnmapped: false
 
 media:
   image:
