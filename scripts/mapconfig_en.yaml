@@ -24,6 +24,7 @@ flds:
           baseURL: https://images.microcms-assets.io/assets/
           embed:
             embedTo: alt
+      unusualSpaceChars: throw
 
   - fetchFld: description
     query: description
